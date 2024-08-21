@@ -2,6 +2,7 @@
 using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using LocadoraDeVeiculos.WebApp.Extensions;
 
 namespace LocadoraDeVeiculos.WebApp.Controllers;
 
@@ -20,32 +21,32 @@ public abstract class WebControllerBase : Controller
 		}
 	}
 
-	//protected IActionResult MensagemRegistroNaoEncontrado(int idRegistro)
-	//{
-	//	TempData.SerializarMensagemViewModel(new MensagemViewModel
-	//	{
-	//		Titulo = "Erro",
-	//		Mensagem = $"Não foi possível encontrar o registro ID [{idRegistro}]!"
-	//	});
+	protected IActionResult MensagemRegistroNaoEncontrado(int idRegistro)
+	{
+		TempData.SerializarMensagemViewModel(new MensagemViewModel
+		{
+			Titulo = "Erro",
+			Mensagem = $"Não foi possível encontrar o registro ID [{idRegistro}]!"
+		});
 
-	//	return RedirectToAction("Index", "Inicio");
-	//}
+		return RedirectToAction("Index", "Inicio");
+	}
 
-	//protected void ApresentarMensagemFalha(Result resultado)
-	//{
-	//	ViewBag.Mensagem = new MensagemViewModel
-	//	{
-	//		Titulo = "Falha",
-	//		Mensagem = resultado.Errors[0].Message
-	//	};
-	//}
+	protected void ApresentarMensagemFalha(Result resultado)
+	{
+		ViewBag.Mensagem = new MensagemViewModel
+		{
+			Titulo = "Falha",
+			Mensagem = resultado.Errors[0].Message
+		};
+	}
 
-	//protected void ApresentarMensagemSucesso(string mensagem)
-	//{
-	//	TempData.SerializarMensagemViewModel(new MensagemViewModel
-	//	{
-	//		Titulo = "Sucesso",
-	//		Mensagem = mensagem
-	//	});
-	//}
+	protected void ApresentarMensagemSucesso(string mensagem)
+	{
+		TempData.SerializarMensagemViewModel(new MensagemViewModel
+		{
+			Titulo = "Sucesso",
+			Mensagem = mensagem
+		});
+	}
 }

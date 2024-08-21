@@ -22,4 +22,10 @@
     <ProjectReference Include="..\LocadoraVeiculos.Infra.Orm\LocadoraVeiculos.Infra.Orm.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\Usuario\AcessoNegado.cshtml" />
+    <None Include="Views\Usuario\Login.cshtml" />
+    <None Include="Views\Usuario\Registrar.cshtml" />
+  </ItemGroup>
+
 </Project>

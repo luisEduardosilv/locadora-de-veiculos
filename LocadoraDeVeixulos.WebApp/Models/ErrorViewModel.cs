@@ -1,4 +1,4 @@
-namespace LocadoraDeVeixulos.WebApp.Models
+namespace LocadoraDeVeiculos.WebApp.Models
 {
 	public class ErrorViewModel
 	{

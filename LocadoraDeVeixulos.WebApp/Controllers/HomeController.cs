@@ -1,6 +1,6 @@
-using LocadoraDeVeixulos.WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using LocadoraDeVeiculos.WebApp.Models;
 
 namespace LocadoraDeVeixulos.WebApp.Controllers
 {
